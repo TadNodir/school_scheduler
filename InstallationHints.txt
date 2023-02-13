@@ -1,0 +1,20 @@
+To configure database to MariaDB: 
+in config/database.php on the lines 46-61 modify to:
+'mysql' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'port'      => env('DB_PORT', '3307'),
+            'database'  => env('DB_DATABASE', 'school_scheduler'),
+            'username'  => env('DB_USERNAME', 'root'),
+            'password'  => env('DB_PASSWORD', 'root'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+and then on git bash: git artisan migrate
