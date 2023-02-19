@@ -26,6 +26,20 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+
+                                @error('username')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
@@ -33,6 +47,22 @@
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="place" class="col-md-4 col-form-label text-md-end">{{ __('Institution') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="place" class="form-control @error('place') is-invalid @enderror" name="place" required autofocus>
+                                    <option value="university">University</option>
+                                    <option value="school">School</option>
+                                </select>
+                                @error('place')
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
