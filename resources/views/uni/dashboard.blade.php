@@ -18,7 +18,7 @@
                         <form method="get" action="{{url('/uni_dashboard/' . $user->id . '/subjects_info')}}" class="m-3 justify-content-center">
                         <label for="subjects">Number of subjects: </label>
                         <input type="number" id="subjects" name="subNum" min="0"
-                               onkeypress="return (charCode !==8 && charCode ===0 || (charCode >= 48 && charCode <= 57))"><br>
+                               onkeypress="return (charCode !==8 && charCode ===0 || (charCode >= 48 && charCode <= 57))" required><br>
                         <input type="submit" name="submit" value="Save">
                         </form>
                     </div>
